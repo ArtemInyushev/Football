@@ -1,0 +1,12 @@
+﻿@{
+    foreach (Player player in Model) {
+        <hr />
+        <div>
+            <a href="/Players/@player.Id">
+                <img src="/img/Players/@player.ImageUrl" height="25" width="35" alt="No photo" />
+                <span>@player.Name</span>
+            </a>
+        </div>
+    }
+    <hr />
+}

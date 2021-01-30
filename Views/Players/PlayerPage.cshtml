@@ -1,0 +1,16 @@
+﻿@{
+    Player player = Model as Player;
+    int age = new DateTime((DateTime.Now - player.Age).Ticks).Year - 1;
+    ViewData["Title"] = player.Name;
+}
+
+<h1>@player.Name</h1>
+<img src="/img/Players/@player.ImageUrl" height="250" width="350" alt="No photo" />
+<p>Date of birth: @player.Age.ToString("dddd, dd MMMM yyyy", System.Globalization.CultureInfo.CreateSpecificCulture("en-US")) (@age years old)</p>
+<p>Position: @player.Position</p>
+<div>
+    @player.Biography
+</div>
+<div>
+    @Html.ActionLink("Team menu", "TeamPage", "Teams", new { id = player.TeamId })
+</div>

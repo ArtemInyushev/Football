@@ -1,0 +1,21 @@
+﻿<h1>Teams</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Team team in Model) {
+        <tr>
+            <td>
+                <p>@team.Name</p>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
